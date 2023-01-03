@@ -1,5 +1,6 @@
 const { Product, User, Order } = require("../../models");
 
+// Add Order
 exports.addOrder = async (req, res) => {
     try {
         const data = {
@@ -61,6 +62,7 @@ exports.addOrder = async (req, res) => {
     }
 }
 
+// Show Order Base on User 
 exports.getOrder = async (req, res) => {
     try {
         let data = await Order.findAll({
@@ -105,6 +107,7 @@ exports.getOrder = async (req, res) => {
     }
 }
 
+// Show All Data Order
 exports.getOrders = async (req, res) => {
     try {
         let orderData = await Order.findAll({
@@ -151,6 +154,7 @@ exports.getOrders = async (req, res) => {
     }
 }
 
+// Update Order
 exports.updateOrder = async (req, res) => {
     try {
         const { id } = req.params;
@@ -179,6 +183,7 @@ exports.updateOrder = async (req, res) => {
     }
 };
 
+// Delete Order
 exports.deleteOrder = async (req, res) => {
     try {
         const { id } = req.params;

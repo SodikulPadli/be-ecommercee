@@ -1,5 +1,6 @@
 const { User, Product, Order, Transaction } = require("../../models");
 
+// Add Transaction
 exports.addTransaction = async (req, res) => {
     try {
         const data = {
@@ -90,7 +91,7 @@ exports.addTransaction = async (req, res) => {
        }) 
     }
 };
-
+// Show All Transaction
 exports.getTransactions = async (req, res) => {
     try {
         let transactionData = await Transaction.findAll({

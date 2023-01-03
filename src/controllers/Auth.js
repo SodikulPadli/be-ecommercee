@@ -3,6 +3,7 @@ const Joi = require('joi');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+// Registrasi Account
 exports.register = async (req, res) => {
   const schema = Joi.object({
     user: Joi.string().min(5).required(),
@@ -48,6 +49,7 @@ exports.register = async (req, res) => {
   }
 };
 
+// Login Account
 exports.login = async (req, res) => {
   const schema = Joi.object({
     email: Joi.string().email().min(6).required(),
@@ -97,6 +99,7 @@ exports.login = async (req, res) => {
   }
 };
 
+// Check Account
 exports.checkAuth = async (req, res) => {
   try {
     const id = req.user.id;

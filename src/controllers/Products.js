@@ -1,5 +1,6 @@
 const { Product, User } = require("../../models");
 
+// Add Product Access Only Admin
 exports.addProduct = async (req, res) => {
     try {
      
@@ -55,7 +56,7 @@ exports.addProduct = async (req, res) => {
     }
 }
 
-
+// Show Product Base On Parameter id Product
 exports.getProduct = async (req, res) => {
   try {
     const { id } = req.params;
@@ -87,6 +88,7 @@ exports.getProduct = async (req, res) => {
   }
 };
 
+// Show All Products
 exports.getProducts = async (req, res) => {
   try {
     let productData = await Product.findAll({
@@ -125,6 +127,7 @@ exports.getProducts = async (req, res) => {
   }
 };
 
+// Update Product
 exports.updateProduct = async (req, res) => {
   try {
       const data = {
@@ -158,6 +161,7 @@ exports.updateProduct = async (req, res) => {
     }
 }
 
+// Delete Product
 exports.deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;
